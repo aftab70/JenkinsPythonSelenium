@@ -11,6 +11,7 @@ RUN pip3 install pytest-html
 RUN wget -nc https://dl-ssl.google.com/linux/linux_signing_key.pub 
 RUN cat linux_signing_key.pub | gpg --dearmor | tee /etc/apt/trusted.gpg.d/linux_signing_key.gpg  >/dev/null
 RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/chrome.list'
-RUN apt-get update && apt-get install google-chrome-stable -y
+RUN apt-get update
+RUN apt-get install google-chrome-stable -y
 
 
